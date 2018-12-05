@@ -30,9 +30,14 @@ public class Servlet extends HttpServlet {
    JSONArray ja = new JSONArray();
    for (Statistics s : stats) {
      JSONObject jo = new JSONObject();
+     JSONObject joSong = new JSONObject();
+     JSONObject jsonUser = new JSONObject();
      jo.put("artist", s.artist());
      jo.put("track", s.track());
+     jo.put("length", s.track());
+     jo.put("album", s.track());
      ja.put(jo);
+     jo.accumulate("Users", jsonUser);
 
   }
   out.println(ja.toString(2));
