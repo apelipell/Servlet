@@ -6,8 +6,10 @@ import java.sql.*;
 import java.util.Collections;
 
 public class TestStatistics {
-  private String artist;
-  private String track;
+  private String artist_name;
+  private String artist_picture;
+  private String user_id;
+  private String rank;
   static Connection con;
   static {
     try {
@@ -36,9 +38,10 @@ public class TestStatistics {
     List<Statistics> stats = new ArrayList<>();
     try {
       Statement stmt = con.createStatement();
-      ResultSet rs = stmt.executeQuery("SELECT * FROM statistics;");
+      ResultSet rs = stmt.executeQuery("SELECT * FROM artist;");
       while (rs.next()) {
-        Statistics s = new Statistics(rs.getString("artist"), rs.getString("track"));
+        Statistics s = new Statistics(rs.getString("artist_name"), rs.getString("artist_picture"),
+        rs.getString("user_id"), rs.getString("rank"));
         stats.add(s);
       }
     } catch (SQLException e) {

@@ -30,11 +30,11 @@ public class Servlet extends HttpServlet {
      JSONObject jo = new JSONObject();
      JSONObject joSong = new JSONObject();
      JSONObject jsonUser = new JSONObject();
-     jo.accumulate("Users", jsonUser);
-     jo.put("artist", s.artist());
-     jo.put("track", s.track());
-     jo.put("length", s.track());
-     jo.put("album", s.track());
+
+     jo.put("artist_name", s.artist_name());
+     jo.put("artist_picture", s.artist_picture());
+     jo.put("user_id", s.user_id());
+     jo.put("rank", s.rank());
      ja.put(jo);
 
   }
