@@ -9,8 +9,6 @@ import org.json.*;
 import java.util.List;
 import java.util.ArrayList;
 import java.sql.*;
-//import se.itu.web.TestStatistics;
-
 
 
 public class Servlet extends HttpServlet {
@@ -20,7 +18,7 @@ public class Servlet extends HttpServlet {
    request.setCharacterEncoding(UTF_8.name());
 
    response.setContentType("application/json;charset="+UTF_8.name());
-   //response.setContentType("text/html;charset="+UTF_8.name());
+
    PrintWriter out =
    new PrintWriter(new OutputStreamWriter(response.getOutputStream(),
    UTF_8), true);
@@ -32,12 +30,12 @@ public class Servlet extends HttpServlet {
      JSONObject jo = new JSONObject();
      JSONObject joSong = new JSONObject();
      JSONObject jsonUser = new JSONObject();
+     jo.accumulate("Users", jsonUser);
      jo.put("artist", s.artist());
      jo.put("track", s.track());
      jo.put("length", s.track());
      jo.put("album", s.track());
      ja.put(jo);
-     jo.accumulate("Users", jsonUser);
 
   }
   out.println(ja.toString(2));
