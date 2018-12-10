@@ -23,18 +23,18 @@ public class Servlet extends HttpServlet {
    new PrintWriter(new OutputStreamWriter(response.getOutputStream(),
    UTF_8), true);
 
-   List<Statistics> stats = TestStatistics.getStats();
+   List<Statistics> artist = TestStatistics.getArtist();
 
    JSONArray ja = new JSONArray();
-   for (Statistics s : stats) {
+   for (Statistics a : artist) {
      JSONObject jo = new JSONObject();
      JSONObject joSong = new JSONObject();
      JSONObject jsonUser = new JSONObject();
 
-     jo.put("artist_name", s.artist_name());
-     jo.put("artist_picture", s.artist_picture());
-     jo.put("user_id", s.user_id());
-     jo.put("rank", s.rank());
+     jo.put("artist_name", a.artist_name());
+     jo.put("artist_picture", a.artist_picture());
+     jo.put("user_id", a.user_id());
+     jo.put("rank", a.rank());
      ja.put(jo);
 
   }

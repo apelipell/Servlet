@@ -34,20 +34,20 @@ public class TestStatistics {
     System.out.println(ja.toString(2));
   }*/
 
-  public static List<Statistics> getStats() {
-    List<Statistics> stats = new ArrayList<>();
+  public static List<Statistics> getArtist() {
+    List<Statistics> artist = new ArrayList<>();
     try {
       Statement stmt = con.createStatement();
       ResultSet rs = stmt.executeQuery("SELECT * FROM artist;");
       while (rs.next()) {
-        Statistics s = new Statistics(rs.getString("artist_name"), rs.getString("artist_picture"),
+        Statistics a = new Statistics(rs.getString("artist_name"), rs.getString("artist_picture"),
         rs.getString("user_id"), rs.getString("rank"));
-        stats.add(s);
+        artist.add(a);
       }
     } catch (SQLException e) {
       System.err.println("Error reading from db " + e.getMessage());
     }
-    return stats;
+    return artist;
   }
 
 }
