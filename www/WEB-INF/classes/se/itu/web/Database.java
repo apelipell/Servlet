@@ -32,7 +32,6 @@ public class Database {
   //}
   /*public static void main(String[] args) {
     List<Statistics> stats = getStats();//new ArrayList<>();
-
     JSONArray ja = new JSONArray();
     for (Statistics s : stats) {
       JSONObject jo = new JSONObject();
