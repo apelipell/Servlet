@@ -27,15 +27,15 @@ public class Servlet extends HttpServlet {
 
    JSONArray ja = new JSONArray();
    for (Statistics a : artist) {
-     JSONObject jo = new JSONObject();
-     JSONObject joSong = new JSONObject();
-     JSONObject jsonUser = new JSONObject();
+     JSONObject joArtist = new JSONObject();
+     //JSONObject joSong = new JSONObject();
+     //JSONObject jsonUser = new JSONObject();
 
-     jo.put("artist_name", a.artist_name());
-     jo.put("artist_picture", a.artist_picture());
-     jo.put("user_id", a.user_id());
-     jo.put("rank", a.rank());
-     ja.put(jo);
+     joArtist.put("artist_name", a.artist_name());
+     joArtist.put("artist_picture", a.artist_picture());
+     joArtist.put("user_id", a.user_id());
+     joArtist.put("artist_rank", a.artist_rank());
+     ja.put(joArtist);
 
   }
   out.println(ja.toString(2));

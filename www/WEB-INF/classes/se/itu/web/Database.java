@@ -9,7 +9,16 @@ public class Database {
   private String artist_name;
   private String artist_picture;
   private String user_id;
-  private String rank;
+  private String artist_rank;
+
+  private String song_name;
+  private String song_picture;
+  private String song_rank;
+  private String song_artist;
+
+
+
+
   static Connection con;
   static {
     try {
@@ -41,7 +50,7 @@ public class Database {
       ResultSet rs = stmt.executeQuery("SELECT * FROM artist;");
       while (rs.next()) {
         Statistics a = new Statistics(rs.getString("artist_name"), rs.getString("artist_picture"),
-        rs.getString("user_id"), rs.getString("rank"));
+        rs.getString("user_id"), rs.getString("artist_rank"));
         artist.add(a);
       }
     } catch (SQLException e) {
@@ -49,5 +58,21 @@ public class Database {
     }
     return artist;
   }
+
+  /*public static List<Statistics> getSong() {
+    List<Statistics> Song = new ArrayList<>();
+    try {
+      Statement stmt = con.createStatement();
+      ResultSet rs = stmt.executeQuery("SELECT * FROM song;");
+      while (rs.next()) {
+        Statistics s = new Statistics(rs.getString("song_name"), rs.getString("song_picture"),
+        rs.getString("user_id"), rs.getString("song_rank"), rs.getString("song_artist"));
+        artist.add(s);
+      }
+    } catch (SQLException e) {
+      System.err.println("Error reading from db " + e.getMessage());
+    }
+    return song;
+  }*/
 
 }

@@ -6,13 +6,13 @@ public class Statistics{
   private String artist_name;
   private String artist_picture;
   private String user_id;
-  private String rank;
+  private String artist_rank;
 
-  public Statistics(String artist_name, String artist_picture, String user_id, String rank){
+  public Statistics(String artist_name, String artist_picture, String user_id, String artist_rank){
     this.artist_name = artist_name;
     this.artist_picture = artist_picture;
     this.user_id = user_id;
-    this.rank = rank;
+    this.artist_rank = artist_rank;
   }
 
   public String artist_name(){
@@ -27,8 +27,8 @@ public class Statistics{
     return user_id;
   }
 
-  public String rank(){
-    return rank;
+  public String artist_rank(){
+    return artist_rank;
   }
   /*@Override
   public String toString() {
