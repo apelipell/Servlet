@@ -23,7 +23,7 @@ public class Servlet extends HttpServlet {
    new PrintWriter(new OutputStreamWriter(response.getOutputStream(),
    UTF_8), true);
 
-   List<Statistics> artist = TestStatistics.getArtist();
+   List<Statistics> artist = Database.getArtist();
 
    JSONArray ja = new JSONArray();
    for (Statistics a : artist) {

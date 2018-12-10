@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.sql.*;
 import java.util.Collections;
 
-public class TestStatistics {
+public class Database {
   private String artist_name;
   private String artist_picture;
   private String user_id;
