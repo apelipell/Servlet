@@ -16,9 +16,6 @@ public class Database {
   private String song_rank;
   private String song_artist;
 
-
-
-
   static Connection con;
   static {
     try {
