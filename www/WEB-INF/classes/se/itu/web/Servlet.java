@@ -22,18 +22,19 @@ public class Servlet extends HttpServlet {
    PrintWriter out =
    new PrintWriter(new OutputStreamWriter(response.getOutputStream(),
    UTF_8), true);
-
-   List<Statistics> artist = Database.getArtist();
+   String userId = request.getParameter("user_id");
+   // TODO: vad göra om parametern saknas???
+   List<Statistics> artist = Database.getArtist(userId);
 
    JSONArray ja = new JSONArray();
    for (Statistics a : artist) {
      JSONObject joArtist = new JSONObject();
      //JSONObject joSong = new JSONObject();
      //JSONObject jsonUser = new JSONObject();
-
+     //joArtist.put("user_name", a.user().name());
      joArtist.put("artist_name", a.artist_name());
      joArtist.put("artist_picture", a.artist_picture());
-     joArtist.put("user_id", a.user_id());
+     //joArtist.put("user_id", a.user_id());
      joArtist.put("artist_rank", a.artist_rank());
      ja.put(joArtist);
 
