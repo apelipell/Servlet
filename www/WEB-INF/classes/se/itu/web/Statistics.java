@@ -13,6 +13,9 @@ public class Statistics{
   private String song_rank;
   private String song_artist;
 
+  private String user_name;
+  private String password;
+
   public Statistics(String artist_name, String artist_picture, String user_id, String artist_rank/*,
                     String song_name, String song_picture, String song_rank, String song_artist*/){
     this.artist_name = artist_name;
