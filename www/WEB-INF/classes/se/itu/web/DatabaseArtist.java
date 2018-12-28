@@ -5,16 +5,11 @@ import java.util.ArrayList;
 import java.sql.*;
 import java.util.Collections;
 
-public class Database {
+public class DatabaseArtist {
   private String artist_name="";
   private String artist_picture="";
   private String user_id="";
   private String artist_rank="";
-
-  private String song_name="";
-  private String song_picture="";
-  private String song_rank="";
-  private String song_artist="";
 
   static Connection con;
   static {
@@ -57,15 +52,15 @@ public class Database {
     return artist;
   }
 
-  /*public static List<Statistics> getSong() {
-    List<Statistics> Song = new ArrayList<>();
+/*  public static List<StatisticsSong> getSong(String userId) {
+    List<StatisticsSong> song = new ArrayList<>();
     try {
       Statement stmt = con.createStatement();
-      ResultSet rs = stmt.executeQuery("SELECT * FROM song;");
+      ResultSet rs = stmt.executeQuery("SELECT * FROM user_favorite_songs WHERE userid=" + userId + ";");
       while (rs.next()) {
-        Statistics s = new Statistics(rs.getString("song_name"), rs.getString("song_picture"),
-        rs.getString("user_id"), rs.getString("song_rank"), rs.getString("song_artist"));
-        artist.add(s);
+        StatisticsSong s = new Statistics(rs.getString("song_name"), rs.getString("song_picture"),
+                                          rs.getString("song_rank"));
+        song.add(s);
       }
     } catch (SQLException e) {
       System.err.println("Error reading from db " + e.getMessage());

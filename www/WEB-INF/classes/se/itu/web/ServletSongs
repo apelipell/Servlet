@@ -22,7 +22,7 @@ public class Servlet extends HttpServlet {
    PrintWriter out =
    new PrintWriter(new OutputStreamWriter(response.getOutputStream(),
    UTF_8), true);
-   String userId = request.getParameter("user_id");
+   String userId = request.getParameter("artist_user_id");
    // TODO: vad göra om parametern saknas???
    List<Statistics> artist = Database.getArtist(userId);
 
@@ -38,8 +38,22 @@ public class Servlet extends HttpServlet {
      joArtist.put("artist_rank", a.artist_rank());
      ja.put(joArtist);
 
+     JSONArray js = new JSONArray();
+     for (Statistics s : song) {
+       JSONObject joSong = new JSONObject();
+       //JSONObject joSong = new JSONObject();
+       //JSONObject jsonUser = new JSONObject();
+       //joArtist.put("user_name", a.user().name());
+       joSong.put("song_name", s.song_name());
+       joSong.put("song_picture", s.song_picture());
+       //joArtist.put("user_id", a.user_id());
+       joSong.put("song_rank", s.song_rank());
+       js.put(joSong);
+
   }
   out.println(ja.toString(2));
+  out.println(js.toString(2));
 
  }
+}
 }
