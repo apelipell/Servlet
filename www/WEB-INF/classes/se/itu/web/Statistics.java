@@ -2,40 +2,6 @@ package se.itu.web;
 import java.util.List;
 import java.util.Collections;
 
-class Song {
-  private String song_name;
-  private String song_picture;
-  private String song_rank;
-  private String artist;
-
-  public Song(String name, String picture, String rank){
-    this.song_name = name;
-    this.song_picture = picture;
-    this.song_rank = rank;
-
-  }
-
-  public String song_name() {
-    return song_name;
-  }
-  public String song_picture() {
-    return song_picture;
-  }
-  public String song_rank() {
-    return song_rank;
-  }
-
-  public String toString() {
-    return new StringBuilder(song_name)
-       .append(" ")
-       .append(song_rank)
-       .append(" ")
-       .append(song_picture)
-       .toString();
-  }
-}
-
-
 class User {
   private String name;
   private String userId;
@@ -65,15 +31,12 @@ class User {
 }
 public class Statistics {
   private User user;
-  private Song song;
+//  private Song song;
   private String artist_name="";
   private String artist_picture="";
   private String user_id="";
   private String artist_rank="";
 
-  /*private String song_name="";
-  private String song_picture="";
-  private String song_rank="";*/
   private String songArtist;
   private String name="";
   private String picture="";
@@ -104,10 +67,6 @@ public class Statistics {
 
   public User user() {
     return user;
-  }
-
-  public Song song() {
-    return song;
   }
 
   public String name(){
