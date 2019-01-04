@@ -2,36 +2,7 @@ package se.itu.web;
 import java.util.List;
 import java.util.Collections;
 
-class User {
-  private String name;
-  private String userId;
-  private String password;
-  public User(String name, String userId, String password) {
-    this.name = name;
-    this.userId = userId;
-    this.password = password;
-  }
-  public String name() {
-    return name;
-  }
-  public String userId() {
-    return userId;
-  }
-  public String password() {
-    return password;
-  }
-  public String toString() {
-    return new StringBuilder(name)
-      .append(" ")
-      .append(userId)
-      .append(" ")
-      .append(password)
-      .toString();
-  }
-}
 public class Statistics {
-  private User user;
-
   private String artist_name="";
   private String artist_picture="";
   private String user_id="";
@@ -45,28 +16,19 @@ public class Statistics {
   private String user_name="";
   private String password="";
 
-  public Statistics(String name, String picture, String rank) {
+  public Statistics(String user_name, String name, String picture, String rank) {
+    this.user_name = user_name;
     this.name = name;
     this.picture = picture;
     this.rank = rank;
   }
 
-  public Statistics(String name, String picture, String rank, String songArtist) {
+  public Statistics(String user_name, String name, String picture, String rank, String songArtist) {
+    this.user_name = user_name;
     this.name = name;
     this.picture = picture;
     this.rank = rank;
     this.songArtist = songArtist;
-  }
-
-  public Statistics(User user, String artist, String rank, String picture) {
-    this.user = user;
-    this.artist_name = artist;
-    this.artist_rank = rank;
-    this.artist_picture = picture;
-  }
-
-  public User user() {
-    return user;
   }
 
   public String name(){
@@ -83,6 +45,9 @@ public class Statistics {
 
   public String user_id(){
     return user_id;
+  }
+  public String user_name(){
+    return user_name;
   }
 
   public String rank(){

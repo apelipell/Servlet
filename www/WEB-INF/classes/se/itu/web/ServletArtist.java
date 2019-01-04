@@ -23,12 +23,16 @@ public class ServletArtist extends HttpServlet {
    new PrintWriter(new OutputStreamWriter(response.getOutputStream(),
    UTF_8), true);
    String userId = request.getParameter("artist_user_id");
-   
+
    List<Statistics> artist = DatabaseArtist.getArtist(userId);
+
+   JSONObject stats = new JSONObject();
+   out.println(stats.put("user_name", artist.get(0).user_name()));
 
    JSONArray ja = new JSONArray();
    for (Statistics a : artist) {
      JSONObject joArtist = new JSONObject();
+     //joArtist.put("user_name", a.user_name());
      joArtist.put("artist_name", a.name());
      joArtist.put("artist_picture", a.picture());
      joArtist.put("artist_rank", a.rank());

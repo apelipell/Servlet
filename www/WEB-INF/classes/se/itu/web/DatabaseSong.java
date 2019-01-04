@@ -6,6 +6,7 @@ import java.sql.*;
 import java.util.Collections;
 
 public class DatabaseSong {
+  private String user_name="";
   private String song_name="";
   private String song_picture="";
   private String user_id="";
@@ -27,8 +28,8 @@ public class DatabaseSong {
       Statement stmt = con.createStatement();
       ResultSet rs = stmt.executeQuery("SELECT * FROM user_favorite_songs WHERE userid=" + userId + ";");
       while (rs.next()) {
-        //User user = new User(rs.getString("user_name"), "",  "");
-        Statistics s = new Statistics(rs.getString("song_name"),
+        
+        Statistics s = new Statistics(rs.getString("user_name"), rs.getString("song_name"),
                                       rs.getString("song_picture"), rs.getString("song_rank"),
                                       rs.getString("artist_name"));
         song.add(s);

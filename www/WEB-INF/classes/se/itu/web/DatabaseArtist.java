@@ -8,7 +8,7 @@ import java.util.Collections;
 public class DatabaseArtist {
   private String artist_name="";
   private String artist_picture="";
-  private String user_id="";
+  private String user_name="";
   private String artist_rank="";
 
   static Connection con;
@@ -28,8 +28,8 @@ public class DatabaseArtist {
       ResultSet rs = stmt.executeQuery("SELECT * FROM users_favorite_artists WHERE userid=" + userId + ";");
 
       while (rs.next()) {
-        //User user = new User(rs.getString("user_name"), "",  "");
-        Statistics a = new Statistics(rs.getString("artist_name"),
+        
+        Statistics a = new Statistics(rs.getString("user_name"), rs.getString("artist_name"),
                                       rs.getString("picture_url"), rs.getString("rank"));
         artist.add(a);
       }
