@@ -31,7 +31,7 @@ class User {
 }
 public class Statistics {
   private User user;
-//  private Song song;
+
   private String artist_name="";
   private String artist_picture="";
   private String user_id="";
@@ -88,21 +88,6 @@ public class Statistics {
   public String rank(){
     return rank;
   }
-/*
-private User user;
-private String artist_name;
-private String artist_picture;
-private String user_id;
-private String artist_rank;
-
-private String song_name;
-private String song_picture;
-private String song_rank;
-private String song_artist;
-
-private String user_name;
-private String password;
-*/
 
   public String toString() {
     return new StringBuilder(name)
@@ -113,17 +98,4 @@ private String password;
        .toString();
   }
 
-/*
-  public String song_name(){
-    return song_name;
-  }
-
-  public String song_picture(){
-    return song_picture;
-  }
-
-  public String song_rank(){
-    return song_rank;
-  }
-*/
 }
