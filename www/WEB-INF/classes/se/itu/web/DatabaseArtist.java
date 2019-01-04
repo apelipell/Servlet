@@ -21,19 +21,6 @@ public class DatabaseArtist {
     }
   }
 
-  //}
-  /*public static void main(String[] args) {
-    List<Statistics> stats = getStats();//new ArrayList<>();
-    JSONArray ja = new JSONArray();
-    for (Statistics s : stats) {
-      JSONObject jo = new JSONObject();
-      jo.put("artist", s.artist());
-      jo.put("track", s.track());
-      ja.put(jo);
-    }
-    System.out.println(ja.toString(2));
-  }*/
-
   public static List<Statistics> getArtist(String userId) {
     List<Statistics> artist = new ArrayList<>();
     try {

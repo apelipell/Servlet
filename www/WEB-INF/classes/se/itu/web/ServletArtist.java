@@ -23,7 +23,7 @@ public class ServletArtist extends HttpServlet {
    new PrintWriter(new OutputStreamWriter(response.getOutputStream(),
    UTF_8), true);
    String userId = request.getParameter("artist_user_id");
-   // TODO: vad göra om parametern saknas???
+   
    List<Statistics> artist = DatabaseArtist.getArtist(userId);
 
    JSONArray ja = new JSONArray();
