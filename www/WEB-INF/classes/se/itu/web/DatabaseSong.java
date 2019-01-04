@@ -6,11 +6,6 @@ import java.sql.*;
 import java.util.Collections;
 
 public class DatabaseSong {
-  private String song_name="";
-  private String song_picture="";
-  private String song_rank="";
-  private String artist_name="";
-
 /**
 * Försöker skapa en koppling mot databasen statistics.db och kontrollerar
 * ifall kopplingen lyckades eller misslyckades. Skriver ut ett meddelande
@@ -26,17 +21,21 @@ public class DatabaseSong {
     }
   }
 
-/**
-* Skapar en ArrayList och lägger till user_name, song_name, song_picture, song_rank och artist_name
-* från den skapade vyn i databasen efter en viss userId.
-*
-*/
+  /**
+  * Läser ut allting från den skapade vyn user_favorite_songs efter ett visst userId.
+  */
 
   public static List<Statistics> getSong(String userId) {
     List<Statistics> song = new ArrayList<>();
     try {
       Statement stmt = con.createStatement();
       ResultSet rs = stmt.executeQuery("SELECT * FROM user_favorite_songs WHERE userid=" + userId + ";");
+
+      /**
+      * Kör igenom vyn i databasen, läser in song_name, song_picture, song_rank och artist_name
+      * och lägger till i arraylistan song.
+      */
+
       while (rs.next()) {
 
         Statistics s = new Statistics(rs.getString("song_name"),
@@ -44,7 +43,9 @@ public class DatabaseSong {
                                       rs.getString("artist_name"));
         song.add(s);
       }
-
+      /**
+      * Fångar exceptions ifall det blir problem med att läsa från databasen.
+      */
     } catch (SQLException e) {
       System.err.println("Error reading from db " + e.getMessage());
     }

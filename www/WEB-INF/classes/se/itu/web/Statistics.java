@@ -41,7 +41,7 @@ public class Statistics {
   public String song_name(){
       return song_name;
   }
-  
+
   public String song_rank(){
     return song_rank;
   }
@@ -53,14 +53,5 @@ public class Statistics {
   public String song_artist(){
     return song_artist;
   }
-
-  /*public String toString() {
-    return new StringBuilder(artist_name)
-       .append(" ")
-       .append(artist_rank)
-       .append(" ")
-       .append(artist_picture)
-       .toString();
-  }*/
 
 }

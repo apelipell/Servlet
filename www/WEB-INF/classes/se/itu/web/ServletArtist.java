@@ -22,10 +22,19 @@ public class ServletArtist extends HttpServlet {
    PrintWriter out =
    new PrintWriter(new OutputStreamWriter(response.getOutputStream(),
    UTF_8), true);
+   /**
+   *
+   */
    String userId = request.getParameter("artist_user_id");
 
+   /**
+   * Hämtar
+   */
    List<Statistics> artist = DatabaseArtist.getArtist(userId);
 
+   /**
+   *
+   */
    JSONArray ja = new JSONArray();
    for (Statistics a : artist) {
      JSONObject joArtist = new JSONObject();
@@ -35,9 +44,12 @@ public class ServletArtist extends HttpServlet {
      ja.put(joArtist);
 
   }
+
+  /**
+  * Lägger in JSONArrayen i ett JSONObjekt, ger det titeln artists och skriver ut allt.
+  */
   JSONObject stats = new JSONObject();
   stats.put("artists", ja);
   out.println(stats.toString(2));
-
  }
 }

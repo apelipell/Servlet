@@ -6,10 +6,6 @@ import java.sql.*;
 import java.util.Collections;
 
 public class DatabaseArtist {
-  private String artist_name="";
-  private String artist_picture="";
-  private String artist_rank="";
-
   /**
   * Försöker skapa en koppling mot databasen statistics.db och kontrollerar
   * ifall kopplingen lyckades eller misslyckades. Skriver ut ett meddelande
@@ -29,16 +25,25 @@ public class DatabaseArtist {
   public static List<Statistics> getArtist(String userId) {
     List<Statistics> artist = new ArrayList<>();
     try {
+/**
+* Läser ut allting från den skapade vyn user_favorite_artists efter ett visst userId.
+*/
       Statement stmt = con.createStatement();
       ResultSet rs = stmt.executeQuery("SELECT * FROM user_favorite_artists WHERE userid=" + userId + ";");
 
+      /**
+      * Kör igenom vyn i databasen, läser in artist_name, picture_url och rank och lägger till
+      * i arraylistan artist.
+      */
       while (rs.next()) {
 
         Statistics a = new Statistics(rs.getString("artist_name"),
                                       rs.getString("picture_url"), rs.getString("rank"));
         artist.add(a);
       }
-
+      /**
+      * Fångar exceptions ifall det blir problem med att läsa från databasen.
+      */
     } catch (SQLException e) {
       System.err.println("Error reading from db " + e.getMessage());
     }
