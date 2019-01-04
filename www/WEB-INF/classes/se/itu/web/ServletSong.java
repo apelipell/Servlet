@@ -26,9 +26,6 @@ public class ServletSong extends HttpServlet {
 
    List<Statistics> song = DatabaseSong.getSong(userId);
 
-   JSONObject stats = new JSONObject();
-   //stats.put(song.get(0).user_name());
-
    JSONArray js = new JSONArray();
    for (Statistics s : song) {
      JSONObject joSong = new JSONObject();
@@ -38,9 +35,8 @@ public class ServletSong extends HttpServlet {
      joSong.put("song_artist", s.songArtist());
      js.put(joSong);
   }
-
-  //JSONObject test = new JSONObject();
-  stats.put("artists", js);
+  JSONObject stats = new JSONObject();
+  stats.put("song", js);
   out.println(stats.toString(2));
  }
 }

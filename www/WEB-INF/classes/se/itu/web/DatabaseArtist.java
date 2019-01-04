@@ -33,7 +33,7 @@ public class DatabaseArtist {
                                       rs.getString("picture_url"), rs.getString("rank"));
         artist.add(a);
       }
-      System.out.println(artist);
+    
     } catch (SQLException e) {
       System.err.println("Error reading from db " + e.getMessage());
     }

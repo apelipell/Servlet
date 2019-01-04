@@ -26,9 +26,6 @@ public class ServletArtist extends HttpServlet {
 
    List<Statistics> artist = DatabaseArtist.getArtist(userId);
 
-   JSONObject stats = new JSONObject();
-   out.println(stats.put("user_name", artist.get(0).user_name()));
-
    JSONArray ja = new JSONArray();
    for (Statistics a : artist) {
      JSONObject joArtist = new JSONObject();
@@ -38,7 +35,9 @@ public class ServletArtist extends HttpServlet {
      ja.put(joArtist);
 
   }
-  out.println(ja.toString(2));
+  JSONObject stats = new JSONObject();
+  stats.put("artists", ja);
+  out.println(stats.toString(2));
 
  }
 }

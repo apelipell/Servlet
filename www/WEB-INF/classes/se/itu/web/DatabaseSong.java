@@ -27,7 +27,7 @@ public class DatabaseSong {
   }
 
 /**
-* Skapar en ArrayList 
+* Skapar en ArrayList och läser in allting från den skapade vyn i databasen efter en viss userId.
 */
 
   public static List<Statistics> getSong(String userId) {
@@ -42,7 +42,7 @@ public class DatabaseSong {
                                       rs.getString("artist_name"));
         song.add(s);
       }
-      System.out.println(song);
+
     } catch (SQLException e) {
       System.err.println("Error reading from db " + e.getMessage());
     }
