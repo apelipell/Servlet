@@ -25,10 +25,10 @@ public class DatabaseArtist {
     List<Statistics> artist = new ArrayList<>();
     try {
       Statement stmt = con.createStatement();
-      ResultSet rs = stmt.executeQuery("SELECT * FROM users_favorite_artists WHERE userid=" + userId + ";");
+      ResultSet rs = stmt.executeQuery("SELECT * FROM user_favorite_artists WHERE userid=" + userId + ";");
 
       while (rs.next()) {
-        
+
         Statistics a = new Statistics(rs.getString("user_name"), rs.getString("artist_name"),
                                       rs.getString("picture_url"), rs.getString("rank"));
         artist.add(a);
