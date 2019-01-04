@@ -29,13 +29,9 @@ public class ServletArtist extends HttpServlet {
    JSONArray ja = new JSONArray();
    for (Statistics a : artist) {
      JSONObject joArtist = new JSONObject();
-     //JSONObject joSong = new JSONObject();
-     //JSONObject jsonUser = new JSONObject();
-     //joArtist.put("user_name", a.user().name());
-     joArtist.put("artist_name", a.artist_name());
-     joArtist.put("artist_picture", a.artist_picture());
-     //joArtist.put("user_id", a.user_id());
-     joArtist.put("artist_rank", a.artist_rank());
+     joArtist.put("artist_name", a.name());
+     joArtist.put("artist_picture", a.picture());
+     joArtist.put("artist_rank", a.rank());
      ja.put(joArtist);
 
   }

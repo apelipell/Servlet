@@ -39,6 +39,7 @@ public class DatabaseArtist {
     try {
       Statement stmt = con.createStatement();
       ResultSet rs = stmt.executeQuery("SELECT * FROM users_favorite_artists WHERE userid=" + userId + ";");
+
       while (rs.next()) {
         //User user = new User(rs.getString("user_name"), "",  "");
         Statistics a = new Statistics(rs.getString("artist_name"),
@@ -51,21 +52,5 @@ public class DatabaseArtist {
     }
     return artist;
   }
-
-/*  public static List<StatisticsSong> getSong(String userId) {
-    List<StatisticsSong> song = new ArrayList<>();
-    try {
-      Statement stmt = con.createStatement();
-      ResultSet rs = stmt.executeQuery("SELECT * FROM user_favorite_songs WHERE userid=" + userId + ";");
-      while (rs.next()) {
-        StatisticsSong s = new Statistics(rs.getString("song_name"), rs.getString("song_picture"),
-                                          rs.getString("song_rank"));
-        song.add(s);
-      }
-    } catch (SQLException e) {
-      System.err.println("Error reading from db " + e.getMessage());
-    }
-    return song;
-  }*/
 
 }

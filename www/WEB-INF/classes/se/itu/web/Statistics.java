@@ -3,34 +3,34 @@ import java.util.List;
 import java.util.Collections;
 
 class Song {
-  private String name;
-  private String picture;
-  private String rank;
+  private String song_name;
+  private String song_picture;
+  private String song_rank;
   private String artist;
 
   public Song(String name, String picture, String rank){
-    this.name = name;
-    this.picture = picture;
-    this.rank = rank;
+    this.song_name = name;
+    this.song_picture = picture;
+    this.song_rank = rank;
 
   }
 
-  public String name() {
-    return name;
+  public String song_name() {
+    return song_name;
   }
-  public String picture() {
-    return picture;
+  public String song_picture() {
+    return song_picture;
   }
-  public String rank() {
-    return rank;
+  public String song_rank() {
+    return song_rank;
   }
 
   public String toString() {
-    return new StringBuilder(name)
+    return new StringBuilder(song_name)
        .append(" ")
-       .append(rank)
+       .append(song_rank)
        .append(" ")
-       .append(picture)
+       .append(song_picture)
        .toString();
   }
 }
@@ -71,17 +71,28 @@ public class Statistics {
   private String user_id="";
   private String artist_rank="";
 
-  private String song_name="";
+  /*private String song_name="";
   private String song_picture="";
-  private String song_rank="";
+  private String song_rank="";*/
+  private String songArtist;
+  private String name="";
+  private String picture="";
+  private String rank="";
 
   private String user_name="";
   private String password="";
 
-  public Statistics(String artistName, String picture, String rank) {
-    this.artist_name = artistName;
-    this.artist_picture = picture;
-    this.artist_rank = rank;
+  public Statistics(String name, String picture, String rank) {
+    this.name = name;
+    this.picture = picture;
+    this.rank = rank;
+  }
+
+  public Statistics(String name, String picture, String rank, String songArtist) {
+    this.name = name;
+    this.picture = picture;
+    this.rank = rank;
+    this.songArtist = songArtist;
   }
 
   public Statistics(User user, String artist, String rank, String picture) {
@@ -95,30 +106,28 @@ public class Statistics {
     return user;
   }
 
-  /*public Statistics(String name, String picture, String rank){
-
-    this.song_name = name;
-    this.song_picture = picture;
-    this.song_rank = rank;
-  }*/
   public Song song() {
     return song;
   }
 
-  public String artist_name(){
-    return artist_name;
+  public String name(){
+    return name;
   }
 
-  public String artist_picture(){
-    return artist_picture;
+  public String songArtist(){
+    return songArtist;
+  }
+
+  public String picture(){
+    return picture;
   }
 
   public String user_id(){
     return user_id;
   }
 
-  public String artist_rank(){
-    return artist_rank;
+  public String rank(){
+    return rank;
   }
 /*
 private User user;
@@ -137,14 +146,15 @@ private String password;
 */
 
   public String toString() {
-    return new StringBuilder(artist_name)
+    return new StringBuilder(name)
        .append(" ")
-       .append(artist_rank)
+       .append(rank)
        .append(" ")
-       .append(artist_picture)
+       .append(picture)
        .toString();
   }
 
+/*
   public String song_name(){
     return song_name;
   }
@@ -156,5 +166,5 @@ private String password;
   public String song_rank(){
     return song_rank;
   }
-
+*/
 }

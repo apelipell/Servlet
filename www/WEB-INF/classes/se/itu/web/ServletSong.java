@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.sql.*;
 
 
-public class ServletSongs extends HttpServlet {
+public class ServletSong extends HttpServlet {
  @Override
  public void doGet(HttpServletRequest request, HttpServletResponse response)
  throws ServletException, IOException {
@@ -26,15 +26,18 @@ public class ServletSongs extends HttpServlet {
    // TODO: vad göra om parametern saknas???
    List<Statistics> song = DatabaseSong.getSong(userId);
 
-     JSONArray js = new JSONArray();
-     for (Statistics s : song) {
-       JSONObject joSong = new JSONObject();
-       joSong.put("song_name", s.song_name());
-       joSong.put("song_picture", s.song_picture());
-       joSong.put("song_rank", s.song_rank());
-       js.put(joSong);
-
+  // JSONObject stats = new JSONObject();
+  // stats.put("user_name", song.get(0).userName());
+   JSONArray js = new JSONArray();
+   for (Statistics s : song) {
+     JSONObject joSong = new JSONObject();
+     joSong.put("song_name", s.name());
+     joSong.put("song_picture", s.picture());
+     joSong.put("song_rank", s.rank());
+     joSong.put("song_artist", s.songArtist());
+     js.put(joSong);
   }
+  // stats.put("songs", js);
   out.println(js.toString(2));
 
  }

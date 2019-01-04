@@ -4,19 +4,19 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 <servlet>
-  <servlet-name>hello</servlet-name>
-  <servlet-class>se.itu.web.HelloServlet</servlet-class>
+  <servlet-name>statistics_song</servlet-name>
+  <servlet-class>se.itu.web.ServletSong</servlet-class>
 </servlet>
 <servlet>
-  <servlet-name>statistics</servlet-name>
-  <servlet-class>se.itu.web.Servlet</servlet-class>
+  <servlet-name>statistics_artists</servlet-name>
+  <servlet-class>se.itu.web.ServletArtist</servlet-class>
 </servlet>
 <servlet-mapping>
-  <servlet-name>statistics</servlet-name>
-  <url-pattern>/statistics</url-pattern>
+  <servlet-name>statistics_artists</servlet-name>
+  <url-pattern>/statistics/artist</url-pattern>
 </servlet-mapping>
 <servlet-mapping>
-  <servlet-name>statistics</servlet-name>
-  <url-pattern>/statistics</url-pattern>
+  <servlet-name>statistics_song</servlet-name>
+  <url-pattern>/statistics/song</url-pattern>
 </servlet-mapping>
 </web-app>

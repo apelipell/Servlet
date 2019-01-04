@@ -21,19 +21,6 @@ public class DatabaseSong {
     }
   }
 
-  //}
-  /*public static void main(String[] args) {
-    List<Statistics> stats = getStats();//new ArrayList<>();
-    JSONArray ja = new JSONArray();
-    for (Statistics s : stats) {
-      JSONObject jo = new JSONObject();
-      jo.put("artist", s.artist());
-      jo.put("track", s.track());
-      ja.put(jo);
-    }
-    System.out.println(ja.toString(2));
-  }*/
-
   public static List<Statistics> getSong(String userId) {
     List<Statistics> song = new ArrayList<>();
     try {
@@ -42,7 +29,8 @@ public class DatabaseSong {
       while (rs.next()) {
         //User user = new User(rs.getString("user_name"), "",  "");
         Statistics s = new Statistics(rs.getString("song_name"),
-                                      rs.getString("song_picture"), rs.getString("song_rank"));
+                                      rs.getString("song_picture"), rs.getString("song_rank"),
+                                      rs.getString("artist_name"));
         song.add(s);
       }
       System.out.println(song);
