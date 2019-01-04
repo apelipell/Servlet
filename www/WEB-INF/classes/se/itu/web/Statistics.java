@@ -7,55 +7,60 @@ public class Statistics {
   private String artist_picture="";
   private String artist_rank="";
 
-  private String songArtist;
-  private String name="";
-  private String picture="";
-  private String rank="";
+  private String song_name="";
+  private String song_picture="";
+  private String song_rank="";
+  private String song_artist="";
 
-  private String user_name="";
-
-  public Statistics(String user_name, String name, String picture, String rank) {
-    this.user_name = user_name;
-    this.name = name;
-    this.picture = picture;
-    this.rank = rank;
+  public Statistics(String artist_name, String artist_picture, String artist_rank) {
+    this.artist_name = artist_name;
+    this.artist_picture = artist_picture;
+    this.artist_rank = artist_rank;
   }
 
-  public Statistics(String user_name, String name, String picture, String rank, String songArtist) {
-    this.user_name = user_name;
-    this.name = name;
-    this.picture = picture;
-    this.rank = rank;
-    this.songArtist = songArtist;
+  public Statistics(String song_name, String song_picture, String song_rank, String song_artist) {
+    this.song_name = song_name;
+    this.song_picture = song_picture;
+    this.song_rank = song_rank;
+    this.song_artist = song_artist;
   }
 
-  public String name(){
-    return name;
+
+  public String artist_name(){
+    return artist_name;
   }
 
-  public String songArtist(){
-    return songArtist;
+  public String artist_picture(){
+    return artist_picture;
   }
 
-  public String picture(){
-    return picture;
+  public String artist_rank(){
+    return artist_rank;
   }
 
-  public String user_name(){
-    return user_name;
+  public String song_name(){
+      return song_name;
+  }
+  
+  public String song_rank(){
+    return song_rank;
   }
 
-  public String rank(){
-    return rank;
+  public String song_picture(){
+    return song_picture;
   }
 
-  public String toString() {
-    return new StringBuilder(name)
+  public String song_artist(){
+    return song_artist;
+  }
+
+  /*public String toString() {
+    return new StringBuilder(artist_name)
        .append(" ")
-       .append(rank)
+       .append(artist_rank)
        .append(" ")
-       .append(picture)
+       .append(artist_picture)
        .toString();
-  }
+  }*/
 
 }

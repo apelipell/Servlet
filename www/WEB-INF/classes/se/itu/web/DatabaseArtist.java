@@ -8,8 +8,13 @@ import java.util.Collections;
 public class DatabaseArtist {
   private String artist_name="";
   private String artist_picture="";
-  private String user_name="";
   private String artist_rank="";
+
+  /**
+  * Försöker skapa en koppling mot databasen statistics.db och kontrollerar
+  * ifall kopplingen lyckades eller misslyckades. Skriver ut ett meddelande
+  * beroende på utfall.
+  */
 
   static Connection con;
   static {
@@ -29,11 +34,11 @@ public class DatabaseArtist {
 
       while (rs.next()) {
 
-        Statistics a = new Statistics(rs.getString("user_name"), rs.getString("artist_name"),
+        Statistics a = new Statistics(rs.getString("artist_name"),
                                       rs.getString("picture_url"), rs.getString("rank"));
         artist.add(a);
       }
-    
+
     } catch (SQLException e) {
       System.err.println("Error reading from db " + e.getMessage());
     }

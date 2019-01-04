@@ -29,10 +29,10 @@ public class ServletSong extends HttpServlet {
    JSONArray js = new JSONArray();
    for (Statistics s : song) {
      JSONObject joSong = new JSONObject();
-     joSong.put("song_name", s.name());
-     joSong.put("song_picture", s.picture());
-     joSong.put("song_rank", s.rank());
-     joSong.put("song_artist", s.songArtist());
+     joSong.put("song_name", s.song_name());
+     joSong.put("song_picture", s.song_picture());
+     joSong.put("song_rank", s.song_rank());
+     joSong.put("song_artist", s.song_artist());
      js.put(joSong);
   }
   JSONObject stats = new JSONObject();
