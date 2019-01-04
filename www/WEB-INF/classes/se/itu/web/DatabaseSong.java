@@ -11,7 +11,11 @@ public class DatabaseSong {
   private String song_picture="";
   private String user_id="";
   private String song_rank="";
-
+/**
+* Försöker skapa en koppling mot databasen statistics.db och kontrollerar
+* ifall kopplingen lyckades eller misslyckades. Skriver ut ett meddelande
+* beroende på utfall.
+**/
   static Connection con;
   static {
     try {
@@ -22,13 +26,17 @@ public class DatabaseSong {
     }
   }
 
+/**
+* Skapar en ArrayList 
+*/
+
   public static List<Statistics> getSong(String userId) {
     List<Statistics> song = new ArrayList<>();
     try {
       Statement stmt = con.createStatement();
       ResultSet rs = stmt.executeQuery("SELECT * FROM user_favorite_songs WHERE userid=" + userId + ";");
       while (rs.next()) {
-        
+
         Statistics s = new Statistics(rs.getString("user_name"), rs.getString("song_name"),
                                       rs.getString("song_picture"), rs.getString("song_rank"),
                                       rs.getString("artist_name"));

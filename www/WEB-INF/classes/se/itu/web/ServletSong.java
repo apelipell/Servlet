@@ -27,20 +27,20 @@ public class ServletSong extends HttpServlet {
    List<Statistics> song = DatabaseSong.getSong(userId);
 
    JSONObject stats = new JSONObject();
-   out.println(stats.put("user_name", song.get(0).user_name()));
+   //stats.put(song.get(0).user_name());
 
    JSONArray js = new JSONArray();
    for (Statistics s : song) {
      JSONObject joSong = new JSONObject();
-     //joSong.put("user_name", s.user_name());
      joSong.put("song_name", s.name());
      joSong.put("song_picture", s.picture());
      joSong.put("song_rank", s.rank());
      joSong.put("song_artist", s.songArtist());
      js.put(joSong);
   }
-  //stats.put("user_name", js);
-  out.println(js.toString(2));
 
+  //JSONObject test = new JSONObject();
+  stats.put("artists", js);
+  out.println(stats.toString(2));
  }
 }

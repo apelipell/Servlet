@@ -5,7 +5,6 @@ import java.util.Collections;
 public class Statistics {
   private String artist_name="";
   private String artist_picture="";
-  private String user_id="";
   private String artist_rank="";
 
   private String songArtist;
@@ -14,7 +13,6 @@ public class Statistics {
   private String rank="";
 
   private String user_name="";
-  private String password="";
 
   public Statistics(String user_name, String name, String picture, String rank) {
     this.user_name = user_name;
@@ -43,9 +41,6 @@ public class Statistics {
     return picture;
   }
 
-  public String user_id(){
-    return user_id;
-  }
   public String user_name(){
     return user_name;
   }
