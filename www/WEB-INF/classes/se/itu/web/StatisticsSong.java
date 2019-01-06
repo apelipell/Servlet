@@ -8,7 +8,6 @@ public class StatisticsSong {
   private String song_rank="";
   private String song_artist="";
 
-
   public StatisticsSong(String song_name, String song_picture, String song_rank, String song_artist) {
     this.song_name = song_name;
     this.song_picture = song_picture;
