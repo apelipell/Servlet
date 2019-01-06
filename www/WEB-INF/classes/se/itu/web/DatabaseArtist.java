@@ -38,7 +38,7 @@ public class DatabaseArtist {
       while (rs.next()) {
 
         StatisticsArtist a = new StatisticsArtist(rs.getString("artist_name"),
-                                      rs.getString("picture_url"), rs.getString("rank"));
+                                      rs.getString("artist_picture"), rs.getString("artist_rank"));
         artist.add(a);
       }
       /**
