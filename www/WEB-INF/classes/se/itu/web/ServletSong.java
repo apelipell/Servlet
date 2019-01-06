@@ -25,10 +25,13 @@ public class ServletSong extends HttpServlet {
 
    String userId = request.getParameter("song_user_id");
 
-   List<Statistics> song = DatabaseSong.getSong(userId);
+   List<StatisticsSong> song = DatabaseSong.getSong(userId);
 
+   /**
+   * Skapar en JSONArray och lägger in informationen från databasen.
+   */
    JSONArray js = new JSONArray();
-   for (Statistics s : song) {
+   for (StatisticsSong s : song) {
      JSONObject joSong = new JSONObject();
      joSong.put("song_name", s.song_name());
      joSong.put("song_picture", s.song_picture());
@@ -38,7 +41,7 @@ public class ServletSong extends HttpServlet {
   }
 
   /**
-  * Lägger in JSONArrayen i ett JSONObjekt, ger det titeln song och skriver ut allt. 
+  * Lägger in JSONArrayen i ett JSONObjekt, ger det titeln song och skriver ut allt.
   */
   JSONObject stats = new JSONObject();
   stats.put("song", js);

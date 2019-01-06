@@ -30,13 +30,13 @@ public class ServletArtist extends HttpServlet {
    /**
    * Hämtar
    */
-   List<Statistics> artist = DatabaseArtist.getArtist(userId);
+   List<StatisticsArtist> artist = DatabaseArtist.getArtist(userId);
 
    /**
-   *
+   * Skapar en JSONArray och lägger in informationen från databasen.
    */
    JSONArray ja = new JSONArray();
-   for (Statistics a : artist) {
+   for (StatisticsArtist a : artist) {
      JSONObject joArtist = new JSONObject();
      joArtist.put("artist_name", a.artist_name());
      joArtist.put("artist_picture", a.artist_picture());

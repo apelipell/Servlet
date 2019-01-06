@@ -25,8 +25,8 @@ public class DatabaseSong {
   * Läser ut allting från den skapade vyn user_favorite_songs efter ett visst userId.
   */
 
-  public static List<Statistics> getSong(String userId) {
-    List<Statistics> song = new ArrayList<>();
+  public static List<StatisticsSong> getSong(String userId) {
+    List<StatisticsSong> song = new ArrayList<>();
     try {
       Statement stmt = con.createStatement();
       ResultSet rs = stmt.executeQuery("SELECT * FROM user_favorite_songs WHERE userid=" + userId + ";");
@@ -38,7 +38,7 @@ public class DatabaseSong {
 
       while (rs.next()) {
 
-        Statistics s = new Statistics(rs.getString("song_name"),
+        StatisticsSong s = new StatisticsSong(rs.getString("song_name"),
                                       rs.getString("song_picture"), rs.getString("song_rank"),
                                       rs.getString("artist_name"));
         song.add(s);

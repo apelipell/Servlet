@@ -22,8 +22,8 @@ public class DatabaseArtist {
     }
   }
 
-  public static List<Statistics> getArtist(String userId) {
-    List<Statistics> artist = new ArrayList<>();
+  public static List<StatisticsArtist> getArtist(String userId) {
+    List<StatisticsArtist> artist = new ArrayList<>();
     try {
 /**
 * Läser ut allting från den skapade vyn user_favorite_artists efter ett visst userId.
@@ -37,7 +37,7 @@ public class DatabaseArtist {
       */
       while (rs.next()) {
 
-        Statistics a = new Statistics(rs.getString("artist_name"),
+        StatisticsArtist a = new StatisticsArtist(rs.getString("artist_name"),
                                       rs.getString("picture_url"), rs.getString("rank"));
         artist.add(a);
       }
