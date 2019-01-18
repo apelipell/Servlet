@@ -19,6 +19,13 @@ The json is constructed after the formula
     
     "song_picture": ""
 
+ 
+    "artist_name": "",
+    
+    "artist_picture": "",
+    
+    "artist_rank": ""
+  
 
 hur json är uppbyggt
 
