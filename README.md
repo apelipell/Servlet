@@ -7,5 +7,27 @@ This is the servlet that will connect the application to the information current
 
 ## For developers
 
+This application is created in Java and 
 
+The json is constructed after the formula
+
+  {"song": [
+  {
+    "song_rank": "",
+    "song_artist": "",
+    "song_name": "",
+    "song_picture": ""
+  }
+]}
+
+
+hur json är uppbyggt
+
+artist
+rank
+bild....
+
+skript
+
+winstone
 
