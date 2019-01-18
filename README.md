@@ -12,13 +12,19 @@ This application is created in Java and
 The json is constructed after the formula
 
   {"song": [
+  
   {
+  
     "song_rank": "",
+    
     "song_artist": "",
+    
     "song_name": "",
+    
     "song_picture": ""
 
-}
+  }
+  
 ]}
 
 
