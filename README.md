@@ -17,7 +17,7 @@ The appliction uses the two views:
     
     user_favorite_artists
     
-Which are fetched via the SQL query
+Which are fetched via the SQL querys:
 
     SELECT * FROM user_favorite_songs WHERE userid=" + userId + ";
 
