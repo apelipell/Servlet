@@ -7,9 +7,11 @@ This is the servlet that will connect the application to the information current
 
 ## For developers
 
-This application is created in Java and are made to provide information to the application which you can find here: https://github.com/10773n/Spotifystatistics
+This application is created in Java and are made to provide information to the Android application which you can find here: https://github.com/10773n/Spotifystatistics
 
-The json is constructed after the formula
+Currently it uses a database with information about two users, apelipell and 10773n, but the idea is to replace this with the API provided by Spotify for up to date information. 
+
+The json is constructed after the formula:
   
  Songs:
  
@@ -30,12 +32,10 @@ The json is constructed after the formula
     "artist_rank": ""
   
 
-hur json är uppbyggt
+The servlet uses Winstone Servlet Engine v0.9.10 which is provided. To run the servlet you can use the commando: 
 
-artist
-rank
-bild....
-
+  java -jar winstone.jar --webroot=www
+  
 skript
 
 winstone
