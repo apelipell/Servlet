@@ -9,9 +9,21 @@ This is the servlet that will connect the application to the information current
 
 This application is created in Java and are made to provide information to the Android application which you can find here: https://github.com/10773n/Spotifystatistics
 
-Currently it uses a database with information about two users, apelipell and 10773n, but the idea is to replace this with the API provided by Spotify for up to date information. 
+Currently it uses the provided SQLite database with information about two users, apelipell and 10773n, but the idea is to replace this with the API provided by Spotify for up to date information. 
 
-The json is constructed after the formula:
+The appliction uses the two views:
+
+    user_favorite_songs
+    
+    user_favorite_artists
+    
+Which are fetched via the SQL query
+
+    SELECT * FROM user_favorite_songs WHERE userid=" + userId + ";
+
+    SELECT * FROM user_favorite_artists WHERE userid=" + userId + ";
+
+If you don't want to use the database you can create your own with the json formula constructed like this:
   
  Songs:
  
