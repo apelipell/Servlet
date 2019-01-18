@@ -47,7 +47,9 @@ If you don't want to use the database you can create your own with the json form
 The servlet uses Winstone Servlet Engine v0.9.10 which is provided. To run the servlet you can use the commando: 
 
     java -jar winstone.jar --webroot=www
+    
+All the necessary .jar files are included in the lib folder.
   
-There's also a script provided to make it easier to compile and run the program:
+There's also a script, located in the www folder, to make it easier to compile and run the program:
 
     ./build.sh
