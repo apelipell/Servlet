@@ -34,9 +34,8 @@ The json is constructed after the formula:
 
 The servlet uses Winstone Servlet Engine v0.9.10 which is provided. To run the servlet you can use the commando: 
 
-  java -jar winstone.jar --webroot=www
+    java -jar winstone.jar --webroot=www
   
-skript
+There's also a script provided for compilation and to run the program:
 
-winstone
-
+    ./build.sh
