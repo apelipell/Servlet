@@ -12,9 +12,7 @@ This application is created in Java and
 The json is constructed after the formula
 
   {"song": [
-  
   {
-  
     "song_rank": "",
     
     "song_artist": "",
@@ -22,10 +20,8 @@ The json is constructed after the formula
     "song_name": "",
     
     "song_picture": ""
-
-  }
-  
-]}
+   }
+  ]}
 
 
 hur json är uppbyggt
