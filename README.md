@@ -36,6 +36,6 @@ The servlet uses Winstone Servlet Engine v0.9.10 which is provided. To run the s
 
     java -jar winstone.jar --webroot=www
   
-There's also a script provided for compilation and to run the program:
+There's also a script provided to make it easier to compile and run the program:
 
     ./build.sh
