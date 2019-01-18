@@ -11,6 +11,8 @@ This application is created in Java and
 
 The json is constructed after the formula
   
+ Songs:
+ 
     "song_rank": "",
     
     "song_artist": "",
@@ -19,6 +21,7 @@ The json is constructed after the formula
     
     "song_picture": ""
 
+ Artist:
  
     "artist_name": "",
     
