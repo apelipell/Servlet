@@ -7,7 +7,7 @@ This is the servlet that will connect the application to the information current
 
 ## For developers
 
-This application is created in Java and 
+This application is created in Java and are made to provide information to the application which you can find here: https://github.com/10773n/Spotifystatistics
 
 The json is constructed after the formula
   
