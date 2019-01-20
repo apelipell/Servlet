@@ -32,7 +32,7 @@ public class DatabaseSong {
       ResultSet rs = stmt.executeQuery("SELECT * FROM user_favorite_songs WHERE userid=" + userId + ";");
 
       /**
-      * Kör igenom vyn i databasen, läser in song_name, song_picture, song_rank och artist_name
+      * Kör igenom den valda vyn i databasen, läser in song_name, song_picture, song_rank och artist_name
       * och lägger till i arraylistan song.
       */
 

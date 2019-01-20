@@ -32,7 +32,7 @@ public class DatabaseArtist {
       ResultSet rs = stmt.executeQuery("SELECT * FROM user_favorite_artists WHERE userid=" + userId + ";");
 
       /**
-      * Kör igenom vyn i databasen, läser in artist_name, picture_url och rank och lägger till
+      * Kör igenom den valda  vyn i databasen, läser in artist_name, picture_url och rank och lägger till
       * i arraylistan artist.
       */
       while (rs.next()) {
