@@ -23,8 +23,10 @@ public class ServletSong extends HttpServlet {
    new PrintWriter(new OutputStreamWriter(response.getOutputStream(),
    UTF_8), true);
 
+   /**
+   * Läser in det bestämda userId i artist.
+   */
    String userId = request.getParameter("song_user_id");
-
    List<StatisticsSong> song = DatabaseSong.getSong(userId);
 
    /**

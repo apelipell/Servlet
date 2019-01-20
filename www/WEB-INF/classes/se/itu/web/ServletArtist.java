@@ -22,26 +22,23 @@ public class ServletArtist extends HttpServlet {
    PrintWriter out =
    new PrintWriter(new OutputStreamWriter(response.getOutputStream(),
    UTF_8), true);
-   /**
-   *
-   */
-   String userId = request.getParameter("artist_user_id");
 
    /**
-   * Hämtar
+   * Läser in det bestämda userId i artist.
    */
+   String userId = request.getParameter("artist_user_id");
    List<StatisticsArtist> artist = DatabaseArtist.getArtist(userId);
 
    /**
    * Skapar en JSONArray och lägger in informationen från databasen.
    */
-   JSONArray ja = new JSONArray();
+   JSONArray jsonArray = new JSONArray();
    for (StatisticsArtist a : artist) {
      JSONObject joArtist = new JSONObject();
      joArtist.put("artist_name", a.artist_name());
      joArtist.put("artist_picture", a.artist_picture());
      joArtist.put("artist_rank", a.artist_rank());
-     ja.put(joArtist);
+     jsonArray.put(joArtist);
 
   }
 
@@ -49,7 +46,7 @@ public class ServletArtist extends HttpServlet {
   * Lägger in JSONArrayen i ett JSONObjekt, ger det titeln artists och skriver ut allt.
   */
   JSONObject stats = new JSONObject();
-  stats.put("artists", ja);
+  stats.put("artists", jsonArray);
   out.println(stats.toString(2));
  }
 }
